@@ -1,5 +1,6 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,22 +11,24 @@
         {% endblock %}
     </head>
 
+
     <body>
         <!-- implement a navbar inside nav -->
         <nav>
-            NAVBAR
-            <!-- navigation bar goes here -->
-            <!-- make sure to add somewhat unique class/id names  -->
-            <div class="A">
-
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-globe"></i> GATORAI
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>   <!--Replace href with actual links when available-->
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
             </div>
-            <!-- vs -->
-            <div class="nav-containter">
-
-            </div>
-
         </nav>
-        
+       
         {% block body %}
         {% endblock %}
     </body>
