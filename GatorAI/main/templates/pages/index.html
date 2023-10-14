@@ -1,14 +1,11 @@
+{% extends "pages/layout.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>GATORAI</title>
-        <link href="{% static 'pages/index.css' %}" rel="stylesheet">
-        <script src="{% static 'pages/index.js' %}"></script>
-    </head>
+{% block script %}
+    <link href="{% static 'pages/index.css' %}" rel="stylesheet">
+    <script src="{% static 'pages/index.js' %}"></script>
+{% endblock %}
 
-    <body>
-        <h2>TEST</h2>
-    </body>
-</html>
+{% block body %}
+    <p>This is a test again</p>
+{% endblock %}
