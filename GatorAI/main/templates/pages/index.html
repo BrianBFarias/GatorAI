@@ -7,5 +7,19 @@
 {% endblock %}
 
 {% block body %}
-    <p>This is a test again</p>
+    <div id="exploring">
+        <section class="selectionBar">
+            <div>
+                <input type="text" placeholder="What're you loking for?" onsubmit="AIsearch()">
+            </div>
+            <div>
+                <button onclick="AIsearch()"> Search </button>
+            </div>
+        </section>
+
+        <section class="productsDisplay">
+
+        </section>
+        
+    </div>
 {% endblock %}
