@@ -78,7 +78,7 @@ function AIsearch(){
 			  </div>
 			  <div class="spec">
 				  <h2>Lines: ${product.lines}</h2>
-				  <h3>${data_quant}gb Data</h3>
+				  <h3>${data_quant} gb Data</h3>
 			  </div>`
   
 			  allProducts.appendChild(item)

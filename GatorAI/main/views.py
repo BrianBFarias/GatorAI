@@ -26,7 +26,7 @@ def NorM(doc):
     device = True
 
     for token in doc:
-        if token.text.lower() in ["network", "Wifi", "cable", "data", "plan"]:
+        if token.text.lower() in ["network", "wifi", "cable", "data", "plan"]:
             device = False
 
         if token.text.lower() in ["iphone", "samsung", "google", "phone", "telephone", "device", "phones"]:
@@ -78,7 +78,7 @@ def findCamera(text):
     return None
 
 def findLines(text):
-    match = re.search(r'(\d+)\s*(?:line|people|person|family)?', text)
+    match = re.search(r'\b(\d+)\b\s*(line|people|person|family)\b', text)
     if match:
         print(int(match.group(1)))
         return int(match.group(1))
@@ -152,7 +152,7 @@ def SpecPlan(doc, input):
         products = products.filter(data__gte = data)
 
     if rate is not None:
-        products = products.filter(rate__lte=rate)
+        products = products.filter(rate__lte = rate)
 
     return products
 
