@@ -9,11 +9,11 @@
 {% block body %}
     <div id="exploring">
         <section class="selectionBar">
-            <div>
-                <input type="text" placeholder="What're you loking for?" onsubmit="AIsearch()">
+            <div class="outer_search">
+                <textarea name="input" class="input" placeholder="What're you loking for?" onsubmit="AIsearch()"></textarea>
             </div>
             <div>
-                <button onclick="AIsearch()"> Search </button>
+                <button class="submit_btn" onclick="AIsearch()"> Search </button>
             </div>
         </section>
 
