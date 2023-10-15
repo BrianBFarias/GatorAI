@@ -230,6 +230,54 @@
     cursor: pointer;
 }
 
-/*  */ 
 
+#suggestionBox {
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 200px; 
+    overflow-y: auto; 
+    position: absolute; 
+    width: 100%; 
+    z-index: 999; 
+    background-color: #fff; 
+}
 
+#suggestionBox div {
+    padding: 8px 12px; 
+    cursor: pointer;
+    border-bottom: 1px solid #f1f1f1; 
+}
+
+#suggestionBox div:last-child {
+    border-bottom: none; 
+}
+
+#suggestionBox div:hover {
+    background-color: #f5f5f5;
+}
+
+#suggestionBox::-webkit-scrollbar {
+    width: 8px;
+}
+
+#suggestionBox::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+#suggestionBox::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Highlighted product styles */
+.highlighted-product {
+    animation: highlightFade 3s forwards;  /* 3-second animation to fade out the highlight */
+    background-color: #ffff99;  /* Light yellow background to draw attention */
+    border: 1px solid #ffcc00;  /* Border to further emphasize the product */
+    box-shadow: 0 0 10px #ffcc00;  /* Subtle glow around the product */
+}
+
+@keyframes highlightFade {
+    0% { background-color: #ffff99; border: 1px solid #ffcc00; box-shadow: 0 0 10px #ffcc00; }
+    100% { background-color: transparent; border: none; box-shadow: none; }
+}
