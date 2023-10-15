@@ -9,16 +9,33 @@
 {% block body %}
     <div id="exploring">
         <section class="selectionBar">
-            <div>
-                <input type="text" placeholder="What're you loking for?" onsubmit="AIsearch()">
+            <div class="outer_search">
+                <textarea name="inputSearch" class="inputSearch" placeholder="What're you loking for?"></textarea>
             </div>
             <div>
-                <button onclick="AIsearch()"> Search </button>
+                <button class="submit_btn" onclick="AIsearch()"> Search </button>
             </div>
-        </section>
+        </section >
 
         <section class="productsDisplay">
-
+            <div class="product">
+                <h1>iPhone</h1>
+                <h2>Model: 12</h2>
+                <h2>storage: 256 gb</h2>
+                <h3>cameras: 3</h3>
+            </div>
+            <div class="product">
+                <h1>iPhone</h1>
+                <h2>Model: 12</h2>
+                <h2>storage: 256 gb</h2>
+                <h3>cameras: 3</h3>
+            </div>
+            <div class="product">
+                <h1>iPhone</h1>
+                <h2>Model: 12</h2>
+                <h2>storage: 256 gb</h2>
+                <h3>cameras: 3</h3>
+            </div>
         </section>
         
     </div>
