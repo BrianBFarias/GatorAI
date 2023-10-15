@@ -37,6 +37,21 @@ def findPrice(text):
         return price
     else:
         return None
+    
+def findStorage(text):
+    pattern = r'(\d+)\s* ?[Gg][Bb]'
+
+    # Find the first match in the sentence
+    match = re.search(pattern, text, flags=re.IGNORECASE)
+
+    if match:
+        # Extract the matched number
+        storage_capacity = int(match.group(1))
+        return storage_capacity
+    
+    else:
+        return None
+
 
 
 def SpecPhone(doc, input):
@@ -56,6 +71,7 @@ def SpecPhone(doc, input):
             brand = token.text.capitalize()
 
         price = findPrice(input)
+        storage = findStorage(input)
 
 def SpecPlan(doc):
     pass
