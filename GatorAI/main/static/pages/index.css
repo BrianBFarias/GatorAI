@@ -69,7 +69,7 @@
     position: relative;
 }
 
-.left-section, .right-section {
+.left-section {
     display: flex;
     align-items: center;
 }
@@ -82,70 +82,6 @@
 .personal-business-toggle span {
     margin-right: 20px;
     cursor: pointer;
-}
-
-.personal-business-toggle .selected {
-    color: red; 
-    font-weight: bold;
-}
-
-.vertical-divider {
-    height: 50%;
-    width: 1px;
-    background-color: #ffffff;
-    margin: 0 20px;
-}
-
-.nav-links {
-    list-style-type: none;
-    display: flex;
-    gap: 50px;
-}
-
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.nav-links li a:hover {
-    color: red;
-}
-
-.right-section > * {
-    margin-right: 20px;
-}
-
-.sign-in-btn {
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.sign-in-btn:hover {
-    color: red;
-}
-
-.search-container {
-    display: flex;
-    align-items: center;
-    background-color: #2d2d2d;
-    border-radius: 5px;
-    padding: 5px 10px;
-}
-
-.search-container i {
-    margin-right: 10px;
-    color: #fff;
-}
-
-.search-container input {
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    transition: background-color 0.2s;
 }
 
 /* products css */
