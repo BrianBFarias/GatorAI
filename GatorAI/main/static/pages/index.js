@@ -5,7 +5,11 @@ function load(){
 }
 
 function AIsearch(){
-	fetch(`/posts?start=${start}&end=${end}&spice=${localStorage.getItem('filterS') }&flavor=${localStorage.getItem('filterF') }`)
+	input = document.querySelector('.inputSearch').value;
+
+	console.log(input)
+
+	fetch(`/search?input=${input}`)
     .then(response => response.json())
     .then(async data => {
         if(!data){
