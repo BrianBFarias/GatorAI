@@ -1,31 +1,42 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>GATORAI</title>
-        <script src="https://kit.fontawesome.com/821c7259c0.js" crossorigin="anonymous"></script>
-        <link href="{% static 'pages/layout.css' %}" rel="stylesheet">
-        {% block script %}
-        {% endblock %}
-    </head>
 
-
-    <body>
-        <!-- implement a navbar inside nav -->
-        <nav>
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <i class="fas fa-globe"></i> GATORAI
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#">About</a></li>
-                </ul>
+<head>
+    <title>GATORAI</title>
+    <script src="https://kit.fontawesome.com/821c7259c0.js" crossorigin="anonymous"></script>
+    <link href="{% static 'pages/layout.css' %}" rel="stylesheet">
+    {% block script %}
+    {% endblock %}
+</head>
+<body>
+    <nav class="verizon-header">
+        <div class="left-section">
+            <div class="personal-business-toggle">
+                <span><i class="fas fa-check" style="color: red; font-size: 2em; margin-right: 38px;"></i> <span style="color: white;">Personal</span></span>
+                <span>Business</span>
             </div>
-        </nav>
-       
-        {% block body %}
-        {% endblock %}
-    </body>
+            <div class="vertical-divider"></div>
+            <ul class="nav-links">
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Why Verizon</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </div>
+        <div class="right-section">
+            <a href="#" class="store-link" style="font-size: 0.8em;">Stores</a>
+            <span>|</span>
+            <a href="#" class="language-link" style="font-size: 0.8em;">Español</a>
+            <button class="sign-in-btn">Sign in</button>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+    </nav>
+
+    {% block body %}
+    {% endblock %}
+</body>
 </html>
