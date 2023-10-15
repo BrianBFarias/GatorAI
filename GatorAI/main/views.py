@@ -24,7 +24,7 @@ def NorM(doc):
 
     return False
 
-
+# find price of item if not found return none
 def findPrice(text):
     pattern = r'(?:\$|price|cost|costs)\s*([\d.]+)'
 
@@ -37,7 +37,8 @@ def findPrice(text):
         return price
     else:
         return None
-    
+
+# 
 def findStorage(text):
     pattern = r'(\d+)\s* ?[Gg][Bb]'
 
@@ -76,6 +77,7 @@ def SpecPhone(doc, input):
 def SpecPlan(doc):
     pass
 
+# main searching
 def search(request):
     input  = request.GET.get("input") or ""
     doc = nlp(input)
@@ -85,11 +87,10 @@ def search(request):
     mobile = NorM(doc)
 
     if(mobile):
-        SpecPhone(doc, input)
-    elif(not mobile):
-        SpecPlan(doc)
+        return SpecPhone(doc, input)
+    else:
+        return SpecPlan(doc)
 
-    # return list of products best fit
+    # return list of products best fit like shown below as ex
     # return JsonResponse([product['post'] for post in products[start:end]], safe=False) 
-    return JsonResponse(False, safe=False) 
 
