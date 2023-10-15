@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>GATORAI</title>
+    <script src="https://kit.fontawesome.com/821c7259c0.js" crossorigin="anonymous"></script>
+    <link href="{% static 'pages/layout.css' %}" rel="stylesheet">
+    {% block script %}
+    {% endblock %}
+</head>
+<body>
+    <nav class="verizon-header">
+        <div class="left-section">
+            <div class="personal-business-toggle">
+                <span><i class="fas fa-check" style="color: red; font-size: 2em; margin-right: 38px;"></i></span>
+                <span>Verizon SimpleeFilter</span>
+            </div>
+            <div class="vertical-divider"></div>
+        </div>
+    </nav>
+
+    {% block body %}
+    {% endblock %}
+</body>
+</html>

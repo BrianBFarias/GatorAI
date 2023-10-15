@@ -11,10 +11,10 @@ class Phone(models.Model):
     model = models.CharField(default=0, max_length=100)
 
     TYPE = (
-       ('apple', ('Iphone')),
-       ('samsung', ('Galaxy')),
+       ('Apple', ('Iphone')),
+       ('Samsung', ('Galaxy')),
        ('Google', ('Pixel')),
-      ('other', ('other')),
+      ('Other', ('other')),
 
    )
 

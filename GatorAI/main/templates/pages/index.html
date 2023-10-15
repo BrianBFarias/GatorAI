@@ -1,14 +1,61 @@
+{% extends "pages/layout.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>GATORAI</title>
-        <link href="{% static 'pages/index.css' %}" rel="stylesheet">
-        <script src="{% static 'pages/index.js' %}"></script>
-    </head>
+{% block script %}
+    <link href="{% static 'pages/index.css' %}" rel="stylesheet">
+    <script src="{% static 'pages/index.js' %}"></script>
+{% endblock %}
 
-    <body>
-        <h2>TEST</h2>
-    </body>
-</html>
+{% block body %}
+    <div id="exploring">
+        <section class="selectionBar">
+            <div class="outer_search">
+                <textarea name="inputSearch" class="inputSearch" placeholder="What're you loking for?"></textarea>
+            </div>
+            <div class="container">
+                <div>
+                    <button class="submit_btn" onclick="AIsearch()">Submit</button>
+                </div>
+            </div>
+        </section >
+
+        <section id="productsDisplay" class="productsDisplay">
+            {% for product in phones %}
+            <div class="product">
+                <div class="first">
+                    <h1>${{product.price}}</h1>
+                </div>
+                <div>
+                    <h1> {{product.type}}</h1>
+                </div>
+                <div>
+                    <h2> {{product.model}}</h2>
+                </div>
+                <div class="spec">
+                    <h2>{{product.storage}}gb</h2>
+                    <h3>{{product.cameras}} cameras</h3>
+                </div>
+            </div>
+            {% endfor%}
+            {% for product in networks %}
+            <div class="product">
+                <div class="first">
+                    <h1>${{product.rate}} / Month</h1>
+                </div>
+                <div>
+                    <h1> {{product.type}}</h1>
+                </div>
+                <div class="spec">
+                    <h2>Lines: {{product.lines}} </h2>
+                    {% if product.data == 999 %}
+                        <h3> Unlimited Data</h3>
+                    {% else %}
+                        <h3>{{product.data}}gb Data</h3>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor%}
+        </section>
+        
+    </div>
+{% endblock %}
