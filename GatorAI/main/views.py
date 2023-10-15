@@ -23,19 +23,22 @@ def index(request):
 
 # check if we're looking for a network or mobile service
 def NorM(doc):
+    device = True
 
     for token in doc:
-        if token.text.lower() in ["network", "Wifi", "cable", "data", 'plan']:
-            return False
+        if token.text.lower() in ["network", "Wifi", "cable", "data", "plan"]:
+            device = False
 
         if token.text.lower() in ["iphone", "samsung", "google", "phone", "telephone", "device", "phones"]:
-            return True
+            device = True
 
-    return False
+        if token.text.lower() in ["network", "Wifi", "cable", "data", "plan", "cellular", "data", "lines"]:
+            return False
+
+    return device
 
 # find price of item if not found return none
 def findPrice(text):
-    pattern = r'(?:\$|price|cost|costs)\s*([\d.]+)'
     pattern2 = r'\$(\d+(\.\d{2})?)'
 
     # Find the first match in the processed text
@@ -48,7 +51,6 @@ def findPrice(text):
     else:
         return None
 
-# 
 def findStorage(text):
     pattern = r'(\d+)\s* ?[Gg][Bb]'
 
@@ -75,7 +77,20 @@ def findCamera(text):
 
     return None
 
-
+def findLines(text):
+    match = re.search(r'(\d+)\s*(?:line|people|person|family)?', text)
+    if match:
+        print(int(match.group(1)))
+        return int(match.group(1))
+    else:
+        return None
+    
+def findData(text):
+    match = re.search(r'(\d+)\s*(?:GB|gb)\s*(?:of|plan)?\s*(?:data)?', text)
+    if match:
+        return int(match.group(1))
+    else:
+        return None
 
 def SpecPhone(doc, input):
     brand = None
@@ -111,22 +126,49 @@ def SpecPhone(doc, input):
 
     return products
 
-def SpecPlan(doc):
-    pass
+def SpecPlan(doc, input):
+    section = "both"
+    
+    for token in doc:
+        if token.text.lower() in ["wifi", "home", "internet","router"]:
+            section = "home"
+        if token.text.lower() in ["phone", "mobile", "device","telephone", "cellular", "cell"]:
+            section = "mobile"
+
+    rate = findPrice(input)
+    lines = findLines(input)
+    data = findData(input)
+
+    products = Network.objects.all()
+
+    #filter based off whats not none
+    if section != "both":
+        products = products.filter(type__icontains = section)
+
+    if lines is not None:
+        products = products.filter(lines__gte = lines)
+
+    if data is not None:
+        products = products.filter(data__gte = data)
+
+    if rate is not None:
+        products = products.filter(rate__lte=rate)
+
+    return products
 
 # main searching
 def search(request):
     input  = request.GET.get("input") or ""
     doc = nlp(input)
     # input is the inputed text by the user
-
+    print(input)
     # we lookin for mobile or network service
     mobile = NorM(doc)
 
     if(mobile):
         result= SpecPhone(doc, input)
     else:
-        result = SpecPlan(doc)
+        result = SpecPlan(doc, input)
 
     # for item in result:
     #     print(item)
@@ -136,4 +178,3 @@ def search(request):
  
     # return list of products best fit like shown below as ex
     return JsonResponse([product.serialize() for product in result], safe=False) 
-
