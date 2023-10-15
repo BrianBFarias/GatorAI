@@ -6,42 +6,36 @@
 
 .selectionBar{
     display: flex;
-    align-items: center;
     flex-direction: column;
-    background-color: rgb(145, 145, 145);
-    width: 21vw;
-    max-width: 260px;
+    background-color: gray;
+    width: fit-content;
     height: 100vh;
     gap: 10px;
-    padding: 15px;
+    padding: 10px;
     padding-block: 20px;
 }
 
 
-.inputSearch{
+.selectionBar input{
     background-color: transparent;
     color: white;
-    border: 4px solid rgba(0, 0, 0, 0.522);
+    border: 2px solid rgba(0, 0, 0, 0.522);
     font-size: 15px;
     padding: 10px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     min-width: 200px;
-    height: fit-content;
-    box-shadow:0px 0px 5px #000000b1;
     min-height: 20vh;
     text-align: top;
     font-weight: 600;
     border-radius: 10px;
-    overflow-wrap:break-word;
 }
 
-.inputSearch::placeholder{
+
+.selectionBar input::placeholder{
     color: rgba(255, 255, 255, 0.602);
 }
-.inputSearch:focus{
-    outline: none;
-    box-shadow: 0px 0px 8px 1px rgba(255, 0, 0, 0.778);
-}
+
+.verizon-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -128,4 +122,14 @@
     border: none;
     color: #fff;
     transition: background-color 0.2s;
+}
+
+.language-link, .store-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.language-link:hover, .store-link:hover {
+    color: red;
 }
