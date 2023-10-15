@@ -42,92 +42,90 @@
     outline: none;
     box-shadow: 0px 0px 8px 1px rgba(255, 0, 0, 0.778);
 }
-
-.submit_btn{
-    width: 200px;
-    padding-block: 5px;
-    font-size: 15px;
-    background-color: white;
-    margin: auto;
-    border: 2px solid transparent;
-    border-radius: 4px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 700;
-    box-shadow: 0px 0px 6px black;
-}
-.submit_btn:hover{
-    cursor: pointer;
-}
-
-.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px;
     background-color: #151212;
     color: #fff;
+    padding: 10px 40px;
+    position: relative;
 }
 
-
-.nav-logo {
+.left-section, .right-section {
     display: flex;
     align-items: center;
-    font-size: 24px;
 }
 
-
-.nav-logo i {
-    margin-right: 10px;
+.personal-business-toggle {
+    display: flex;
+    align-items: center;
 }
 
+.personal-business-toggle span {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.personal-business-toggle .selected {
+    color: red; 
+    font-weight: bold;
+}
+
+.vertical-divider {
+    height: 50%;
+    width: 1px;
+    background-color: #ffffff;
+    margin: 0 20px;
+}
 
 .nav-links {
     list-style-type: none;
-    padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 50px;
 }
-
 
 .nav-links li a {
     color: #fff;
     text-decoration: none;
-    padding: 5px 15px;
-    border-radius: 5px;
-    transition: background-color 0.2s;
+    transition: color 0.2s;
 }
-
 
 .nav-links li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    color: red;
 }
 
-/* products css */
-
-.productsDisplay{
-    display: flex;
-    padding-top: 20px;
-    flex-direction: column;
-    width: 78vw;
-    gap: 15px;
+.right-section > * {
+    margin-right: 20px;
 }
 
-.product{
-    height: fit-content;
-    border-radius: 5px;
-    display: grid;
-    margin-inline: 20px;
-    margin-inline: 10vw;
-    grid-template-columns: auto auto auto auto auto auto;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
-    background-color: 0px 0px 10px black;
-}
-
-.product:hover{
+.sign-in-btn {
+    background-color: transparent;
+    color: #fff;
+    border: none;
     cursor: pointer;
+    transition: color 0.2s;
 }
 
-/*  */
+.sign-in-btn:hover {
+    color: red;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #2d2d2d;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.search-container i {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.search-container input {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    transition: background-color 0.2s;
+}
