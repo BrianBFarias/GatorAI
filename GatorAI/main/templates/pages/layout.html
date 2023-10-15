@@ -1,0 +1,35 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>GATORAI</title>
+        <script src="https://kit.fontawesome.com/821c7259c0.js" crossorigin="anonymous"></script>
+        <link href="{% static 'pages/layout.css' %}" rel="stylesheet">
+        {% block script %}
+        {% endblock %}
+    </head>
+
+
+    <body>
+        <!-- implement a navbar inside nav -->
+        <nav>
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-globe"></i> GATORAI
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>   <!--Replace href with actual links when available-->
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+       
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

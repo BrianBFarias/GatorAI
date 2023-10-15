@@ -6,3 +6,5 @@ from django.views.decorators.csrf import csrf_exempt
 def index(request):
     return render(request, "pages/index.html")
 
+def search(request):
+    pass
