@@ -35,46 +35,101 @@
     color: rgba(255, 255, 255, 0.602);
 }
 
-
-.nav-container {
+.verizon-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px;
     background-color: #151212;
     color: #fff;
+    padding: 10px 40px;
+    position: relative;
 }
 
-
-.nav-logo {
+.left-section, .right-section {
     display: flex;
     align-items: center;
-    font-size: 24px;
 }
 
-
-.nav-logo i {
-    margin-right: 10px;
+.personal-business-toggle {
+    display: flex;
+    align-items: center;
 }
 
+.personal-business-toggle span {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.personal-business-toggle .selected {
+    color: red; 
+    font-weight: bold;
+}
+
+.vertical-divider {
+    height: 50%;
+    width: 1px;
+    background-color: #ffffff;
+    margin: 0 20px;
+}
 
 .nav-links {
     list-style-type: none;
-    padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 50px;
 }
-
 
 .nav-links li a {
     color: #fff;
     text-decoration: none;
-    padding: 5px 15px;
+    transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+    color: red;
+}
+
+.right-section > * {
+    margin-right: 20px;
+}
+
+.sign-in-btn {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.sign-in-btn:hover {
+    color: red;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #2d2d2d;
     border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.search-container i {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.search-container input {
+    background-color: transparent;
+    border: none;
+    color: #fff;
     transition: background-color 0.2s;
 }
 
+.language-link, .store-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
 
-.nav-links li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.language-link:hover, .store-link:hover {
+    color: red;
 }
