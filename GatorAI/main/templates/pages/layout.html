@@ -1,9 +1,10 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>GATORAI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/821c7259c0.js" crossorigin="anonymous"></script>
     <link href="{% static 'pages/layout.css' %}" rel="stylesheet">
     {% block script %}
@@ -24,7 +25,6 @@
             </ul>
         </div>
         <div class="right-section">
-            <!-- Decreasing font size for "Stores" and "Español" -->
             <a href="#" class="store-link" style="font-size: 0.8em;">Stores</a>
             <span>|</span>
             <a href="#" class="language-link" style="font-size: 0.8em;">Español</a>
@@ -35,6 +35,14 @@
             </div>
         </div>
     </nav>
+
+    <div class="exploring">
+        <!-- Content of the exploring div goes here -->
+    </div>
+
+    <div class="selectionBar">
+        <!-- Content of the selectionBar div goes here -->
+    </div>
 
     {% block body %}
     {% endblock %}
